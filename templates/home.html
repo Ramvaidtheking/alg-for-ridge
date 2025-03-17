@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Weather Index (FWI) Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #EBE8DB;
+            color: #D76C82;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 100%;
+            background: #EBE8DB;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+        h1 {
+            text-align: center;
+            color: #3D0301;
+        }
+        h3 {
+            color: #B03052;
+            line-height: 1.5;
+        }
+        ol, ul {
+            margin-left: 20px;
+            padding-left: 10px;
+        }
+        .highlight {
+            color: #B03052;
+            font-weight: bold;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #3D0301;
+        }
+        h2 {
+          color: #3D0301;
+        }
+        .predict-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            font-size: 18px;
+            color: white;
+            background: #28a745;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .predict-button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fire Weather Index (FWI) Prediction</h1>
+        <h3>The Fire Weather Index (FWI) is a numerical rating of fire intensity, used to estimate wildfire risk based on weather conditions. It is widely used in forestry, disaster management, and environmental monitoring.</h3>
+        
+        <h2>Components of the FWI System</h2>
+        <ul>
+            <li><span class="highlight">Fine Fuel Moisture Code (FFMC)</span> : Measures surface litter dryness.</li>
+            <li><span class="highlight">Duff Moisture Code (DMC)</span> : Indicates moisture in decomposed organic layers.</li>
+            <li><span class="highlight">Drought Code (DC)</span> : Reflects moisture in deep soil layers.</li>
+            <li><span class="highlight">Initial Spread Index (ISI)</span> : Predicts fire spread based on wind & dryness.</li>
+            <li><span class="highlight">Build-Up Index (BUI)</span> : Represents the total fuel available.</li>
+            <li><span class="highlight">Fire Weather Index (FWI)</span> : Measures fire intensity and spread potential.</li>
+        </ul>
+
+        <h2>How is FWI Used?</h2>
+        <ul>
+            <li>Predicts wildfire danger levels for fire prevention.</li>
+            <li>Used in forest management and controlled burns.</li>
+            <li>Supports firefighting efforts and resource allocation.</li>
+            <li>Helps in climate monitoring and wildfire trend analysis.</li>
+        </ul>
+        
+        <h1>Predicting FWI with Algerian Forest Fire Dataset</h1>
+        <h3>The dataset includes 244 instances from two regions in Algeria: Bejaia (0) and Sidi Bel-abbes (1), covering June-September 2012.</h3>
+        
+        <h2>Input Features Required:</h2>
+        <ol>
+            <li>Temperature (°C)</li>
+            <li>Relative Humidity (%)</li>
+            <li>Wind Speed (km/h)</li>
+            <li>Rainfall (mm)</li>
+            <li>Fine Fuel Moisture Code (FFMC)</li>
+            <li>Duff Moisture Code (DMC)</li>
+            <li>Initial Spread Index (ISI)</li>
+            <li>Classes (0: No Fire, 1: Fire)</li>
+            <li>Region (0: Bejaia, 1: Sidi Bel-abbes)</li>
+        </ol>
+
+        <h2>How to Use:</h2>
+        <ol>
+            <li>Enter temperature, humidity, wind speed, and other values.</li>
+            <li>Click <strong>Predict</strong>, and the model will calculate the FWI index.</li>
+            <li>Higher FWI indicates higher wildfire risk.</li>
+        </ol>
+
+        <h1>About the Project</h1>
+        <h3>I developed this project from scratch, using Ridge Regression for accurate predictions.</h3>
+        <h3>Other techniques tested: Lasso & Elastic-Net Regression (although i got almost similar performance from all).</h3>
+        <h3><strong>Tech Used:</strong> Flask, Scikit-learn, Pickle, NumPy, Pandas.</h3>
+        <a href="/predictdata" class="predict-button">Predict Now</a>
+    </div>
+    <div class="footer">Developed with ❤️ by Ram Vaid</div>
+</body>
+</html>
